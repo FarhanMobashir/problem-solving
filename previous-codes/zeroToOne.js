@@ -3,9 +3,9 @@ function zeroToONe(str) {
     str = str.split(' ');
     for (let i = 0; i < str.length; i++) {
         if (str[i].toLowerCase() === 'zero') {
-            result += 0
+            result += '0'
         } else if (str[i].toLowerCase() === 'one') {
-            result += 1;
+            result += '1';
         }
     }
     return result;
