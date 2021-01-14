@@ -30,4 +30,4 @@ function StrLengthRecursion(str) {
     return 1 + StrLengthRecursion(str)
 }
 
-console.log(StrLengthRecursion('apple'))
+console.log(StrLengthRecursion('apple is a very'))
