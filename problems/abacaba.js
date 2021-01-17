@@ -1,9 +1,9 @@
 function aba(n) {
-    if (n.length === ) {
-        return String.fromCharCode(65);
+    if (n === 1) {
+        return String.fromCharCode(64 + n);
     } else {
-        return aba(n) + String.fromCharCode(65++) + aba(n);
+        return aba(n - 1) + String.fromCharCode(64 + n) + aba(n - 1);
+
     }
 }
-
-console.log(aba(1));
+console.log(aba(5));
