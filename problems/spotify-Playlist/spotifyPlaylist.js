@@ -3005,24 +3005,18 @@ todo Coming Up With Logic
 */
 
 function spotifyPlaylist(obj) {
-    let artist = obj.songs.map((item) => (item.track.artists));
-    let songs = obj.songs.map((item) => (item.track.name))
     let result = {};
-    // artist.forEach(function (item) {
-    //     item.forEach(function (i) {
-    //         if (!(i.name in result)) {
-    //             result[i.name] = [];
-
-    //         }
-    //     })
-    // })
-    // console.log(artist)
-    // console.log(songs)
-    obj.songs.forEach(function (item) {
-        console.log(item.name)
+    obj.songs.forEach(function (songs) {
+        songs.track.artists.forEach(function (tracks) {
+            if (!(tracks.name in result)) {
+                result[tracks.name] = [];
+                result[tracks.name].push(songs.track.name)
+            } else {
+                result[tracks.name].push(songs.track.name)
+            }
+        })
     })
-    console.log(result)
-
+    return result;
 }
 
 console.log(spotifyPlaylist(data))
