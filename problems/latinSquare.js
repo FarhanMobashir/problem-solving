@@ -35,4 +35,4 @@ function latinSquare(n) {
 
 }
 
-console.log(latinSquare(6));
+console.log(latinSquare(20));
