@@ -15,16 +15,22 @@ todo Coming Up With Logic
 */
 
 function romanNumeralConverter(num) {
+    return num;
+}
+
+function expandedForm(exp) {
 
 }
 
-function expandedForm(n) {
-    n = n.toString();
-    let result = [];
-    for (let i = 0; i < n.length; i++) {
-        result.push(n[i])
+function appender(n) {
+    if (n > 0 && n < 5) {
+        return ('I').repeat(n.toString()[0]);
     }
-    return result;
+    else if (n > 9 && n <= 30) {
+        return 'X'.repeat(n.toString()[0]);
+    }
+
 }
 
-console.log(expandedForm(2345))
+console.log(appender(20))
+console.log(expandedForm(12))

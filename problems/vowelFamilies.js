@@ -9,11 +9,28 @@
 todo 1. Coming Up with Logic
 
 ? --> Breaking the problem
-- finding first vowel in the string
-- if any other vowel found skip that string
-- if same vowel is found again in that string or no any other vowel is found keep that string
-
-? --> Pseuducode
-- split the elements if the array
-- pick each element and find the first vowel
+- finding the all vowel in the first word
+- now checking whether the next word contain the same vowel only
+- if yes push it in our output array
 */
+
+function vowelFamilies(arr) {
+    let vowel = [];
+    let result = [];
+    for (let j = 0; j < arr[0].length; j++) {
+        if (arr[0][j] === 'a' || arr[0][j] === 'e' || arr[0][j] === 'i' || arr[0][j] === 'o' || arr[0][j] === 'u') {
+            vowel.push(arr[0][j]);
+        }
+    }
+    vowel.forEach(function (letter) {
+        arr.forEach(function (item) {
+            if ((item.includes(letter))) {
+                result.push(item)
+            }
+        })
+    })
+    console.log(vowel);
+    console.log(result);
+}
+
+console.log(vowelFamilies(["many", "carriage", "emit", "apricot", "animal"]));
