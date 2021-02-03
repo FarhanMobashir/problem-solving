@@ -6,4 +6,29 @@
 * Input : 5 -> '101'
 * Input : 1 -> '1'
 * Input : 10 -> '1010'
+
+todo Coming Up With Logic
+? --> Breaking the problem 
+- use a while until input !== 0
+- make a variable result and set it to an empty array
+- start dividing the input by 2 and at the same time divide the input by modulo operator
+- push the remainder in the array
 */
+
+function base2Converter(n) {
+    let result = [];
+
+    if (n === 0) {
+        return 0;
+    } else {
+        while (n !== 0) {
+            result.unshift(n % 2);
+            n = Math.floor(n / 2);
+        }
+        return result.join('')
+    }
+
+}
+
+console.log(base2Converter(141));
+console.log(base2Converter(0));
