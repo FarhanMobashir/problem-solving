@@ -28,18 +28,38 @@ todo Coming Up With the Logic
 - if none of the condition is true return "DRAW"
 */
 
-function ticTacToe(board) {
-    console.log(board)
-    for (let i = 0; i < board[0].length; i++) {
-        console.log(board[0][i])
+function rowCheck(arr) {
+    let set = new Set(arr);
+    arr = [...set];
+    if (arr.length === 1) {
+        return true
+    } else {
+        return false;
     }
 }
 
-console.log(ticTacToe([
-    ["X", "O", "X"],
+function columnCheck(arr) {
+
+}
+console.log(columnCheck([
+    ["X", "X", "O"],
     ["O", "X", "O"],
-    ["O", "X", "X"]
+    ["X", "O", "O"]
 ]))
+function ticTacToe(board) {
+    console.log(board)
+    for (let i = 0; i < board[0].length; i++) {
+        if (rowCheck(board[i])) {
+            return board[i][0];
+        }
+    }
+}
+
+// console.log(ticTacToe([
+//     ["X", "O", "X"],
+//     ["O", "X", "O"],
+//     ["O", "X", "X"]
+// ]))
 // console.log(ticTacToe([
 //     ["O", "O", "O"],
 //     ["O", "X", "X"],
@@ -47,7 +67,7 @@ console.log(ticTacToe([
 // ]))
 // console.log(ticTacToe([
 //     ["X", "X", "O"],
-//     ["O", "O", "X"],
+//     ["O", "X", "X"],
 //     ["X", "X", "O"]
 // ]))
 

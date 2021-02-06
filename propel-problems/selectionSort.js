@@ -1,25 +1,25 @@
 function selectionSort(arr) {
+    // Only change code below this line
     for (let i = 0; i < arr.length; i++) {
-        let min = i;
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[j] < arr[i]) {
-                min = j
-            }
-        }
-        [arr[i], arr[min]] = [arr[min], arr[i]];
+        let idx = findMin(arr, i);
+        // console.log(idx)
+        [arr[i], arr[idx]] = [arr[idx], arr[i]]
     }
     return arr;
+    // Only change code above this line
+}
+function findMin(arr, idx) {
+    let min = arr[idx];
+    let minIdx = idx;
+    for (let i = idx + 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+            minIdx = i;
+        }
+    }
+    return minIdx;
 }
 
-// function findMin(arr) {
-//     let min = Infinity;
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] < min) {
-//             min = arr[i];
-//         }
-//     }
-//     return min;
-// }
+console.log(selectionSort([1, 4, 2, 8, -11, -1119, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]));
 
-
-console.log(selectionSort([9, 8, 7]))
+console.log(findMin([1, 1, 3, 2, 4, 4], 2))

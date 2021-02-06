@@ -25,33 +25,35 @@ todo Coming Up With The logic and pseuducode
 */
 
 
-function merge(arr1, arr2) {
+function mergeArray(arr1, arr2) {
     let result = [];
+    let i = 0;
     let j = 0;
-    let k = 0;
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr1[j] < arr2[k]) {
-            console.log('im if :')
-            result.push([arr1[j], j]);
-            j++;
+    arr1.sort((a, b) => a - b)
+    arr2.sort((a, b) => a - b)
+    let loop = arr1.length + arr2.length;
+    while (result.length !== loop) {
+        if (arr1[i] < arr2[j]) {
+            result.push(arr1[i])
+            i++
         }
-        else if (arr1[j] = arr2[k]) {
-            console.log('im if else 1 :')
-            result.push([arr1[j], j, k]);
-            j++;
-            k++;
+        else if (arr1[i] === arr2[j]) {
+            result.push(arr1[i])
+            i++
+            // loop -= 1;
         }
-        else if (arr1[j] > arr2[k]) {
-            console.log('im if else 2 :')
-            result.push([arr2[k], k]);
-            k++;
+        else {
+            result.push(arr2[j]);
+            j++
         }
     }
-    console.log(j, k)
+    let set = new Set(result);
+    result = [...set]
     return result;
 }
 
-console.log(merge([1, 3, 5], [5, 10, 12]))
+
+console.log(mergeArray([1, 3, 3, 5, 7, 9, 11, 12, 13], [1, 2, 3, 3, 4, 5, 10, 12, 14, 19]))
 
 
 
