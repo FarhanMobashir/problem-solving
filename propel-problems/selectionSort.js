@@ -23,3 +23,6 @@ function findMin(arr, idx) {
 console.log(selectionSort([1, 4, 2, 8, -11, -1119, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]));
 
 console.log(findMin([1, 1, 3, 2, 4, 4], 2))
+
+
+
