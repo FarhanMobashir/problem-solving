@@ -7,23 +7,41 @@
 
 function caesarCipher(str, k) {
     let result = [];
+    if (k > 26) {
+        k = k - (Math.floor(k / 26) * 26)
+    }
     for (let i = 0; i < str.length; i++) {
         result.push(str.charCodeAt(i));
     }
     // console.log(String.fromCharCode(109))
     // return result;
     for (let j = 0; j < result.length; j++) {
-        if (result[j] > 64 && result[j] < 123) {
-            result[j] = String.fromCharCode(result[j] + k);
-        } else if (result[j] > 0 && result[j] < 65) {
-            result[j] = String.fromCharCode(result[j]);
-        } else {
-            result[j] = String.fromCharCode((result[j] - 26) + k);
+        if (result[j] > 64 && result[j] < 91) {
+            if (result[j] + k > 90) {
+                result[j] = String.fromCharCode((result[j] - 26) + k);
+            } else {
+                result[j] = String.fromCharCode(result[j] + k);
+
+            }
+        } else if (result[j] > 96 && result[j] < 123) {
+            if (result[j] + k > 122) {
+                result[j] = String.fromCharCode((result[j] - 26) + k);
+            } else {
+                result[j] = String.fromCharCode(result[j] + k);
+
+            }
         }
+        else {
+            result[j] = String.fromCharCode(result[j]);
+
+        }
+
     }
     return result.join('');
 }
 
-console.log(caesarCipher('middle-Outz', 2))
-console.log(caesarCipher('Ciphering.', 26))
-// okffng-Qwvb
+console.log(caesarCipher('middle-OutzZ', 2))
+console.log(caesarCipher('www.abc.xy', 87))
+console.log(caesarCipher('!m-rB`-oN!.W`cLAcVbN/CqSoolII!SImji.!w/`Xu`uZa1TWPRq`uRBtok`xPT`lL-zPTc.BSRIhu..-!.!tcl!-U', 62))
+
+// okffng-QwvbZ
