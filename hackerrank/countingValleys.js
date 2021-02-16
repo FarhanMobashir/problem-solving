@@ -9,16 +9,7 @@
 
 */
 function countingValleys(steps, path) {
-    let prev = path[0];
-    let valley = 0;
-    for (let i = 1; i < steps - 2; i++) {
-        if (prev === 'D' && path[i] === 'D' && path[i + 1] === "U") {
-            valley++;
-            i += 2;
-        }
-        prev = path[i + 1]
-    }
-    return valley;
+
 
 }
 

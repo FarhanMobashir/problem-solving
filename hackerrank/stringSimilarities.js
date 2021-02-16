@@ -8,27 +8,40 @@
 
 */
 
+function suffixes(str) {
+    let len = str.length;
+    let result = [];
+    str = str.split('');
+    for (let i = 0; i < len; i++) {
+        result.push(str.join(''));
+        str.shift();
+    }
+    return result;
+}
+
 function commonPrefix(str1, str2) {
-    let i;
-    for (i = 0; i < str2.length; i++) {
-        if (str2[i] !== str1[i]) {
-            return i;
+    let counter = 0;
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[0] === str2[0]) {
+            if (str1[i] === str2[i]) {
+                counter++;
+            } else {
+                break;
+            }
+        } else {
+            counter = 0;
         }
     }
-    if (i <= str1.length) {
-        return i;
-    } else {
-        return 0;
-    }
-
+    return counter;
 }
+// console.log(commonPrefix('abad', 'ibabaaba'))
+// console.log(suffixes('ababaa'))
 
 function stringSimilarity(s) {
     let result = 0;
-    for (let i = 0; i < s.length; i++) {
-        let similar = commonPrefix(s, s.slice(i))
-        console.log(similar)
-        result += similar;
+    let strings = suffixes(s);
+    for (let i = 0; i < strings.length; i++) {
+        result += commonPrefix(strings[i], s);
     }
     return result;
 }
