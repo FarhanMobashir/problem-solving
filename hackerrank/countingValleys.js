@@ -15,3 +15,6 @@ function countingValleys(steps, path) {
 
 console.log(countingValleys(12, 'DDUUDDUDUUUD'))
 console.log(countingValleys(100, 'DDUDUDDUDDUDDUUUUDUDDDUUDDUUDDDUUDDUUUUUUDUDDDDUDDUUDUUDUDUUUDUUUUUDDUDDDDUDDUDDDDUUUUDUUDUUDUUDUDDD'))
+
+// Not Done
+
