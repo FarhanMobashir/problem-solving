@@ -7,7 +7,6 @@
 function beautifulDays(i, j, k) {
     let counter = 0;
     for (let idx = i; idx <= j; idx++) {
-        console.log(Math.abs(idx - ((idx.toString().split('').reverse().join('')))))
         if (Math.abs(idx - parseInt((idx.toString().split('').reverse().join('')))) % k === 0) {
             counter += 1;
         }

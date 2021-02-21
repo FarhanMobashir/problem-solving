@@ -13,7 +13,13 @@ function pangrams(s) {
             counter += 1;
         }
     }
-    console.log(counter)
+    if (counter === 26) {
+        return 'pangram'
+    } else {
+        return 'not pangram'
+
+    }
+
 }
 
 console.log(pangrams('we promptly judged antique ivory buckles for the next prize'))
