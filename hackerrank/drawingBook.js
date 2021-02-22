@@ -9,11 +9,20 @@ pageCount has the following parameter(s):
 
 
 */
-
-function pageCount(n, p) {
-    let counter = 0;
+function counter(pageNum, target, start) {
 
 }
 
-console.log(pageCount(6, 2))
-console.log(pageCount(5, 3))
+console.log(counter(6, 2, 0))
+console.log(counter(5, 3, 0))
+
+
+function pageCount(pageNum, target) {
+    let result = 0;
+
+
+}
+
+// console.log(pageCount(6, 2)) // 1
+// console.log(pageCount(5, 3)) // 1
+// console.log(pageCount(5, 4)) // 0
