@@ -9,16 +9,23 @@ pageCount has the following parameter(s):
 
 
 */
-function counter(pageNum, target, start) {
 
-}
-
-console.log(counter(6, 2, 0))
 console.log(counter(5, 3, 0))
+console.log(counter(5, 3, 5))
 
 
 function pageCount(pageNum, target) {
-    let result = 0;
+    if (pageNum === target) {
+        return 1;
+    } else if (target === 1) {
+        return 1;
+    } else if (target > 1 && pageNum - target === 1) {
+        return 0;
+    }
+    // else if () {
+
+    // }
+    // let result = 0;
 
 
 }
