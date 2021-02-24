@@ -16,9 +16,11 @@ jumpingOnClouds has the following parameter(s):
 function jumpingOnClouds(c, k) {
     let energy = 100;
     for (let i = 0; i < c.length; i++) {
-        let jump = c[i + k % c.length];
+        let jump = c[i + (k % c.length)];
         if (jump === 1) {
-            energy -= 2;
+            energy -= 3;
+        } else if (jump === 0) {
+            break;
         }
         energy--;
     }

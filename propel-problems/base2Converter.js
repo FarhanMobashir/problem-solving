@@ -30,5 +30,5 @@ function base2Converter(n) {
 
 }
 
-console.log(base2Converter(141));
+console.log(base2Converter(11111111111111111111111111111011));
 console.log(base2Converter(0));
