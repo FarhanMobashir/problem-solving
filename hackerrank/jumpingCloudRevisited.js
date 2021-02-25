@@ -15,17 +15,18 @@ jumpingOnClouds has the following parameter(s):
 
 function jumpingOnClouds(c, k) {
     let energy = 100;
-    for (let i = 0; i < c.length; i++) {
-        let jump = c[i + (k % c.length)];
+    for (let i = 0; i < c.length; i += k) {
+        let jump = c[(i + k) % c.length];
         if (jump === 1) {
             energy -= 3;
-        } else if (jump === 0) {
-            break;
+        } else {
+            energy -= 1
         }
-        energy--;
     }
+
     return energy;
+
 }
 
 console.log(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2)); // 92
-console.log(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 3)); // 80
+console.log(jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0], 3)); // 80
