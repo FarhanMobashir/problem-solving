@@ -8,15 +8,22 @@
 
 function pairs(k, arr) {
     let counter = 0;
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (Math.abs(arr[i] - arr[j]) === k) {
-                counter++;
-            }
+    let nums = {};
+    for (let item of arr) {
+        let comp1 = item - k;
+        let comp2 = item + k;
+        if (comp1 in nums) {
+            counter++
         }
+        if (comp2 in nums) {
+            counter++;
+        }
+        nums[item] = true;
     }
+    console.log(nums)
     return counter;
-
 }
+
+
 
 console.log(pairs(2, [1, 5, 3, 4, 2]))

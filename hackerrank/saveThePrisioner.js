@@ -13,18 +13,20 @@
 
 function saveThePrisoner(n, m, s) {
     let counter = s;
+    let arr = [];
     for (let i = 0; i < m; i++) {
-        if (counter > n) {
-            counter = 1;
+        arr.push(counter);
+
+        if (counter === n) {
+            counter = 0;
         }
-        // console.log(counter);
         counter++;
     }
-    // console.log(arr);
-    return counter - 1;
+    console.log(arr)
+    return arr[s]
 }
 
 console.log(saveThePrisoner(4, 6, 2));
-console.log(saveThePrisoner(3, 7, 3));
-console.log(saveThePrisoner(7, 19, 2));
+console.log(saveThePrisoner(5, 2, 2));
+// console.log(saveThePrisoner(7, 19, 2));
 
