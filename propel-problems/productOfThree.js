@@ -17,4 +17,14 @@ function findPairs(arr) {
     }
 }
 
-console.log(findPairs([1, 2, 3, 4]))
+// console.log(findPairs([1, 2, 3, 4]))
+
+function strSwap(str) {
+    str = str.split('');
+    for (let i = 0; i < str.length; i++) {
+        let checkStr = str.slice();
+        console.log(checkStr)
+    }
+}
+console.log(strSwap('abca'))
+
