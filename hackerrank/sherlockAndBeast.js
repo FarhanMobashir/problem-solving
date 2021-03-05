@@ -16,13 +16,25 @@
 function decentNumber(n) {
     let result = '';
     if (n < 3) {
-        result = -1
+        result = -1;
         console.log(result)
     } else if (n === 5) {
         result = '3'.repeat(5);
         console.log(result)
     } else if (n === 3) {
         result = '5'.repeat(3);
+        console.log(result);
+    } else if (n % 8 === 3) {
+        let fiveCount = n - 5;
+        result = '5'.repeat(fiveCount) + '3'.repeat(5);
+        console.log(result)
+    }
+    else if (n % 8 === 5) {
+        let fiveCount = n - 3;
+        result = '5'.repeat(fiveCount) + '3'.repeat(3);
+        console.log(result)
+    } else if (n % 5 === 0 && n % 3 !== 0) {
+        result = '5'.repeat(n - 10);
         console.log(result)
     }
 }
