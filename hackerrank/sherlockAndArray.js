@@ -7,28 +7,15 @@
 
 */
 
-function frontSum(arr, idx) {
-    let sum = 0;
-    for (let i = 0; i < idx; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
 
-function backSum(arr, idx) {
-    let sum = 0;
-    for (let i = idx + 1; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
 
 function balancedSums(arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (frontSum(arr, i) === backSum(arr, i)) {
-            return 'YES'
+        for (let j = i + 1; j < arr.length; i++) {
+
         }
     }
+
     return 'NO';
 }
 
